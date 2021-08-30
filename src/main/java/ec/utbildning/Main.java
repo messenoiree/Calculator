@@ -18,6 +18,9 @@ public class Main {
         while(inuse){
             int choice = selectInput();
             switch (choice){
+                case 1:
+                    handleAddition();
+                    break;
                 case 3:
                     handleMultiplication();
                     break;
@@ -55,9 +58,6 @@ public class Main {
         }
     }
 
-    public static void handleAddition(){
-
-    }
 
     public static void handleMultiplication(){
 
@@ -70,7 +70,16 @@ public class Main {
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
     }
+    public static void handleAddition() {
 
+        System.out.println("You opted for addition.");
+        System.out.println("Write the first number: ");
+        int firstNr = scanner.nextInt();
+        System.out.println("Write the number you like to add up.");
+        int secondNr = scanner.nextInt();
+        int result = Operation.addition(firstNr, secondNr);
+        System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
+    }
     public static void handleDivision(){
         System.out.println("You've opted for division");
         System.out.println("Enter your numerator: ");
