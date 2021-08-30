@@ -72,7 +72,7 @@ public class Main {
     }
     public static void handleAddition() {
 
-        System.out.println("You opted for addition.");
+        System.out.println("You opted for addition");
         System.out.println("Write the first number: ");
         int firstNr = scanner.nextInt();
         System.out.println("Write the number you like to add up.");
