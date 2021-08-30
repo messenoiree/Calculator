@@ -20,6 +20,7 @@ public class Main {
             switch (choice){
                 case 3:
                     handleMultiplication();
+                    break;
                 case 4:
                     handleDivision();
                 case 5:
