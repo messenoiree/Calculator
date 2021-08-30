@@ -35,7 +35,7 @@ public class Main {
     public static int selectInput() throws InvalidAnswerException  {
         List<Integer> acceptableAnswers = List.of(1, 2, 4, 5, 6);
         System.out.println("Type the corresponding number to select your desired operation: ");
-        System.out.println("1. Addition");
+        System.out.println("1. Addition");// Matilda tar denna
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication"); // Robin tar denna!
         System.out.println("4. Division"); // Fatima tar denna!
