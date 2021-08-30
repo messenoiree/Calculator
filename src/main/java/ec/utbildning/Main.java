@@ -27,7 +27,8 @@ public class Main {
 
     }
 
-    public static int selectInput() throws InvalidAnswerException {
+    // Här nere är ett fel, vet inte ännu hur vi ska lösa det
+    public static int selectInput() throws InvalidAnswerException  {
         List<Integer> acceptableAnswers = List.of(1, 2, 4, 5, 6);
         System.out.println("Type the corresponding number to select your desired operation: ");
         System.out.println("1. Addition");
@@ -39,6 +40,7 @@ public class Main {
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
         if(!acceptableAnswers.contains(choice)) {
+            // Och på grund av ovan fel blir detta också fel
             throw new InvalidAnswerException("Not a valid answer");
         } else {
             return choice;
