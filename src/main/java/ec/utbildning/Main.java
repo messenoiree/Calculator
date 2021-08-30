@@ -35,7 +35,7 @@ public class Main {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
-        System.out.println("5. Square root");
+        System.out.println("5. Square root"); // Marcus tar denna!
         System.out.println("6. Exit program");
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
