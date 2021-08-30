@@ -22,6 +22,9 @@ public class Main {
                     handleMultiplication();
                 case 4:
                     handleDivision();
+                case 5:
+                    handleSquareRoot();
+                    break;
                 case 6:
                     inuse = false;
                     System.out.println("You've selected to quit the calculator. Goodbye!");
