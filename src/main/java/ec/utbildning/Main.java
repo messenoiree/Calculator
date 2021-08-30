@@ -62,7 +62,7 @@ public class Main {
         double factor1 = scanner.nextDouble();
         System.out.println("Enter your second factor: ");
         double factor2 = scanner.nextDouble();
-        double product = multiplication(factor1, factor2);
+        double product = Operations.multiply(factor1, factor2);
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
     }
