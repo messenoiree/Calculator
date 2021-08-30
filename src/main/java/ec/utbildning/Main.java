@@ -15,11 +15,11 @@ public class Main {
         System.out.println("Finished booting up Calculator 3000");
 
         boolean inuse = true;
-        while (inuse) {
+        while(inuse){
             int choice = selectInput();
-            switch (choice) {
-                case 2:
-                    handleSubtraction();
+            switch (choice){
+                case 1:
+                    handleAddition();
                     break;
                 case 3:
                     handleMultiplication();
@@ -39,18 +39,18 @@ public class Main {
     }
 
     // Här nere är ett fel, vet inte ännu hur vi ska lösa det
-    public static int selectInput() throws InvalidAnswerException {
+    public static int selectInput() throws InvalidAnswerException  {
         List<Integer> acceptableAnswers = List.of(1, 2, 4, 5, 6);
         System.out.println("Type the corresponding number to select your desired operation: ");
         System.out.println("1. Addition");// Matilda tar denna
-        System.out.println("2. Subtraction");//Konstantin tar denna!!
+        System.out.println("2. Subtraction");
         System.out.println("3. Multiplication"); // Robin tar denna!
         System.out.println("4. Division"); // Fatima tar denna!
         System.out.println("5. Square root"); // Marcus tar denna!
         System.out.println("6. Exit program");
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
-        if (!acceptableAnswers.contains(choice)) {
+        if(!acceptableAnswers.contains(choice)) {
             // Och på grund av ovan fel blir detta också fel
             throw new InvalidAnswerException("Not a valid answer");
         } else {
@@ -58,11 +58,8 @@ public class Main {
         }
     }
 
-    public static void handleAddition() {
 
-    }
-
-    public static void handleMultiplication() {
+    public static void handleMultiplication(){
 
         System.out.println("You've opted for multiplication");
         System.out.println("Enter your first factor: ");
@@ -73,8 +70,17 @@ public class Main {
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
     }
+    public static void handleAddition() {
 
-    public static void handleDivision() {
+        System.out.println("You opted for addition");
+        System.out.println("Write the first number: ");
+        int firstNr = scanner.nextInt();
+        System.out.println("Write the number you like to add up.");
+        int secondNr = scanner.nextInt();
+        int result = Operation.addition(firstNr, secondNr);
+        System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
+    }
+    public static void handleDivision(){
         System.out.println("You've opted for division");
         System.out.println("Enter your numerator: ");
         int numerator = scanner.nextInt();
@@ -94,15 +100,5 @@ public class Main {
 
     }
 
-    public static void handleSubtraction() {
-        System.out.println("You've opted for subtraction");
-        System.out.println("Enter your term1: ");
-        double term1 = scanner.nextInt();
-        System.out.println("Enter your term2: ");
-        double term2 = scanner.nextInt();
-        double difference = Operations.subtract(term1, term2);
-        System.out.println("The result of " + term1 + " subtracted by " + term2 + " is " + difference);
 
-
-    }
 }
