@@ -11,5 +11,8 @@ public class Operations {
         double result = numerator / denominator;
         return result;
     }
-
+    public static double subtract(double term1, double term2) {
+        double difference = term1 - term2;
+        return difference;
+    }
 }
