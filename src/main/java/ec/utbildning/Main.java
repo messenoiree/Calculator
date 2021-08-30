@@ -18,8 +18,9 @@ public class Main {
         while (inuse) {
             int choice = selectInput();
             switch (choice) {
-                case 2 :
+                case 2:
                     handleSubtraction();
+                    break;
                 case 3:
                     handleMultiplication();
                     break;
