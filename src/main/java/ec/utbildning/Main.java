@@ -3,6 +3,8 @@ package ec.utbildning;
 import java.util.List;
 import java.util.Scanner;
 
+import static ec.utbildning.Operations.multiplication;
+
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -16,6 +18,8 @@ public class Main {
         while(inuse){
             int choice = selectInput();
             switch (choice){
+                case 3:
+                    handleMultiplication();
                 case 4:
                     handleDivision();
                 case 6:
@@ -58,7 +62,7 @@ public class Main {
         double factor1 = scanner.nextDouble();
         System.out.println("Enter your second factor: ");
         double factor2 = scanner.nextDouble();
-        double product = Operations.multiplication(factor1, factor2);
+        double product = multiplication(factor1, factor2);
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
     }
