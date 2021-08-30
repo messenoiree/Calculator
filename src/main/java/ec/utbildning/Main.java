@@ -51,6 +51,18 @@ public class Main {
 
     }
 
+    public static void handleMultiplication(){
+
+        System.out.println("You've opted for multiplication");
+        System.out.println("Enter your first factor: ");
+        double factor1 = scanner.nextDouble();
+        System.out.println("Enter your second factor: ");
+        double factor2 = scanner.nextDouble();
+        double product = Operations.multiplication(factor1, factor2);
+        System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
+
+    }
+
     public static void handleDivision(){
         System.out.println("You've opted for division");
         System.out.println("Enter your numerator: ");
