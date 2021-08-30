@@ -38,7 +38,7 @@ public class Main {
         System.out.println("1. Addition");
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication"); // Robin tar denna!
-        System.out.println("4. Division");
+        System.out.println("4. Division"); // Fatima tar denna!
         System.out.println("5. Square root"); // Marcus tar denna!
         System.out.println("6. Exit program");
         System.out.println("Your choice: ");
