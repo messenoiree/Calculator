@@ -3,6 +3,8 @@ package ec.utbildning;
 import java.util.List;
 import java.util.Scanner;
 
+import static ec.utbildning.Operations.multiplication;
+
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -16,8 +18,14 @@ public class Main {
         while(inuse){
             int choice = selectInput();
             switch (choice){
+                case 3:
+                    handleMultiplication();
+                    break;
                 case 4:
                     handleDivision();
+                case 5:
+                    handleSquareRoot();
+                    break;
                 case 6:
                     inuse = false;
                     System.out.println("You've selected to quit the calculator. Goodbye!");
@@ -31,10 +39,10 @@ public class Main {
     public static int selectInput() throws InvalidAnswerException  {
         List<Integer> acceptableAnswers = List.of(1, 2, 4, 5, 6);
         System.out.println("Type the corresponding number to select your desired operation: ");
-        System.out.println("1. Addition");
+        System.out.println("1. Addition");// Matilda tar denna
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication"); // Robin tar denna!
-        System.out.println("4. Division");
+        System.out.println("4. Division"); // Fatima tar denna!
         System.out.println("5. Square root"); // Marcus tar denna!
         System.out.println("6. Exit program");
         System.out.println("Your choice: ");
@@ -58,7 +66,7 @@ public class Main {
         double factor1 = scanner.nextDouble();
         System.out.println("Enter your second factor: ");
         double factor2 = scanner.nextDouble();
-        double product = Operations.multiplication(factor1, factor2);
+        double product = Operations.multiply(factor1, factor2);
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
     }
@@ -73,6 +81,15 @@ public class Main {
         System.out.println("The result of " + numerator + " divided by " + denominator + " is " + quotient);
     }
 
+    public static void handleSquareRoot() {
+        System.out.println("You've opted in for square root");
+        System.out.println("Enter your number: ");
+        double radicand = scanner.nextDouble();
+        double square = Operations.sqrt(radicand);
+        System.out.println("The square root of " + radicand + " is " + square);
+
+
+    }
 
 
 }
