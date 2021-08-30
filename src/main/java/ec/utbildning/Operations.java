@@ -6,6 +6,10 @@ public class Operations {
         double product = factor1 * factor2;
         return product;
     }
+    public static double sqrt(double radicand) {
+        double result = Math.sqrt(radicand);
+        return result;
+    }
 
     public static double divide(int numerator, int denominator){
         double result = numerator / denominator;

@@ -77,6 +77,15 @@ public class Main {
         System.out.println("The result of " + numerator + " divided by " + denominator + " is " + quotient);
     }
 
+    public static void handleSquareRoot() {
+        System.out.println("You've opted in for square root");
+        System.out.println("Enter your number: ");
+        double radicand = scanner.nextDouble();
+        double square = Operations.sqrt(radicand);
+        System.out.println("The square root of " + radicand + " is " + square);
+
+
+    }
 
 
 }
