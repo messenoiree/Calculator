@@ -1,9 +1,10 @@
 package ec.utbildning;
 
+
 import java.util.List;
 import java.util.Scanner;
 
-import static ec.utbildning.Operations.multiplication;
+
 
 public class Main {
 
