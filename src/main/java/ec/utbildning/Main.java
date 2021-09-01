@@ -77,7 +77,7 @@ public class Main {
         int firstNr = scanner.nextInt();
         System.out.println("Write the number you like to add up.");
         int secondNr = scanner.nextInt();
-        int result = Operation.addition(firstNr, secondNr);
+        int result = Operations.addition(firstNr, secondNr);
         System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
     }
     public static void handleDivision(){
