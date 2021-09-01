@@ -15,8 +15,8 @@ public class Main {
         System.out.println("Booting up Calculator 3000 ...");
         System.out.println("Finished booting up Calculator 3000");
 
-        boolean inuse = true;
-        while(inuse){
+        boolean isRunning = true;
+        while(isRunning){
             int choice = selectInput();
             switch (choice){
                 case 1:
@@ -34,7 +34,7 @@ public class Main {
                     handleSquareRoot();
                     break;
                 case 6:
-                    inuse = false;
+                    isRunning = false;
                     System.out.println("You've selected to quit the calculator. Goodbye!");
                     break;
             }
@@ -81,7 +81,7 @@ public class Main {
         System.out.println("You opted for addition");
         System.out.println("Write the first number: ");
         double firstNr = scanner.nextDouble();
-        System.out.println("Write the number you like to add up.");
+        System.out.println("Write the number you like to add up:");
         double secondNr = scanner.nextDouble();
         double result = Operations.add(firstNr, secondNr);
         System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
