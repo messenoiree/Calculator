@@ -30,6 +30,7 @@ public class Main {
                     break;
                 case 4:
                     handleDivision();
+                    break;
                 case 5:
                     handleSquareRoot();
                     break;
