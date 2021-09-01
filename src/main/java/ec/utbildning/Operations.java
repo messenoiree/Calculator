@@ -11,7 +11,7 @@ public class Operations {
         return result;
     }
 
-    public static double divide(int numerator, int denominator){
+    public static double divide(double numerator, double denominator){
         double result = numerator / denominator;
         return result;
     }
