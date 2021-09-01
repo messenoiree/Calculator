@@ -59,10 +59,12 @@ public class Main {
             System.out.println("6. Exit program");
             System.out.print("Your choice: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = 0;
 
+            // Här är vi och fäktas med problemen
             try {
+                choice = scanner.nextInt();
+                scanner.nextLine();
                 if (!acceptableAnswers.contains(choice)) {
                     // Och på grund av ovan fel blir detta också fel
 
