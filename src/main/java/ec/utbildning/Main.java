@@ -43,23 +43,25 @@ public class Main {
     }
 
     // Här nere är ett fel, vet inte ännu hur vi ska lösa det
-    public static int selectInput() throws InvalidAnswerException  {
+    public static int selectInput() throws InvalidAnswerException {
+        int result;
         List<Integer> acceptableAnswers = List.of(1, 2, 3, 4, 5, 6); //nr 3 saknades, tillagd.
         System.out.println("Type the corresponding number to select your desired operation: ");
         System.out.println("1. Addition");// Matilda tar denna
-        System.out.println("2. Subtraction");
+        System.out.println("2. Subtraction");//Konstantin tar denna!
         System.out.println("3. Multiplication"); // Robin tar denna!
         System.out.println("4. Division"); // Fatima tar denna!
         System.out.println("5. Square root"); // Marcus tar denna!
         System.out.println("6. Exit program");
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
-        if(!acceptableAnswers.contains(choice)) {
+        if (!acceptableAnswers.contains(choice)) {
             // Och på grund av ovan fel blir detta också fel
             throw new InvalidAnswerException("Not a valid answer");
         } else {
-            return choice;
+            result = choice;
         }
+        return result;
     }
 
 
