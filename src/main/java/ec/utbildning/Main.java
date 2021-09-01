@@ -23,8 +23,8 @@ public class Main {
                     handleAddition();
                     break;
                 case 2:
-                        handleSubtraction();
-                        break;
+                    handleSubtraction();
+                    break;
                 case 3:
                     handleMultiplication();
                     break;
@@ -81,7 +81,7 @@ public class Main {
         int firstNr = scanner.nextInt();
         System.out.println("Write the number you like to add up.");
         int secondNr = scanner.nextInt();
-        int result = Operations.addition(firstNr, secondNr);
+        int result = Operations.add(firstNr, secondNr);
         System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
     }
 

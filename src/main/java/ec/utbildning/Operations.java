@@ -19,7 +19,7 @@ public class Operations {
         double difference = term1 - term2;
         return difference;
     }
-    public static int addition(int firstNr, int secondNr){
+    public static int add(int firstNr, int secondNr){
         int result=firstNr+secondNr;
         return result;
 
