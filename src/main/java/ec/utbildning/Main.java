@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 
-
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -16,9 +15,9 @@ public class Main {
         System.out.println("Finished booting up Calculator 3000");
 
         boolean isRunning = true;
-        while(isRunning){
+        while (isRunning) {
             int choice = selectInput();
-            switch (choice){
+            switch (choice) {
                 case 1:
                     handleAddition();
                     break;
@@ -58,6 +57,7 @@ public class Main {
         System.out.println("6. Exit program");
         System.out.print("Your choice: ");
         int choice = scanner.nextInt();
+        scanner.nextLine();
         if (!acceptableAnswers.contains(choice)) {
             // Och på grund av ovan fel blir detta också fel
             throw new InvalidAnswerException("Not a valid answer");
@@ -68,7 +68,7 @@ public class Main {
     }
 
 
-    public static void handleMultiplication(){
+    public static void handleMultiplication() {
 
         System.out.println("You've opted for multiplication");
         System.out.println("Enter your first factor: ");
@@ -79,15 +79,16 @@ public class Main {
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
     }
+
     public static void handleAddition() {
 
         System.out.println("You opted for addition");
         System.out.println("Write the first number: ");
-        double firstNr = scanner.nextDouble();
+        double firstNr = checkInput();
         System.out.println("Write the number you like to add up:");
-        double secondNr = scanner.nextDouble();
+        double secondNr = checkInput();
         double result = Operations.add(firstNr, secondNr);
-        System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
+        System.out.println("Result of " + firstNr + " + " + secondNr + " is: " + result);
     }
 
     public static void handleSubtraction() {
@@ -99,7 +100,8 @@ public class Main {
         double difference = Operations.subtract(term1, term2);
         System.out.println("The result of " + term1 + " subtracted by " + term2 + " is " + difference);
     }
-    public static void handleDivision(){
+
+    public static void handleDivision() {
         System.out.println("You've opted for division");
         System.out.println("Enter your numerator: ");
         double numerator = scanner.nextInt();
@@ -117,6 +119,22 @@ public class Main {
         System.out.println("The square root of " + radicand + " is " + square);
 
 
+    }
+
+    public static double checkInput() {
+        boolean isInvalid = true;
+        double convertedToDouble = 0;
+        String userInput = "";
+        while (isInvalid) {
+            try {
+                userInput = scanner.nextLine();
+                convertedToDouble = Double.parseDouble(userInput);
+                isInvalid = false;
+            } catch (Exception e) {
+                System.out.println("Invalid input, you must input a number.");
+            }
+        }
+        return convertedToDouble;
     }
 
 
