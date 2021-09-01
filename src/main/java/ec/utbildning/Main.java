@@ -78,10 +78,10 @@ public class Main {
 
         System.out.println("You opted for addition");
         System.out.println("Write the first number: ");
-        int firstNr = scanner.nextInt();
+        double firstNr = scanner.nextDouble();
         System.out.println("Write the number you like to add up.");
-        int secondNr = scanner.nextInt();
-        int result = Operations.add(firstNr, secondNr);
+        double secondNr = scanner.nextDouble();
+        double result = Operations.add(firstNr, secondNr);
         System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
     }
 

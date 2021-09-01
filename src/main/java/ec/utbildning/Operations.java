@@ -19,8 +19,8 @@ public class Operations {
         double difference = term1 - term2;
         return difference;
     }
-    public static int add(int firstNr, int secondNr){
-        int result=firstNr+secondNr;
+    public static double add(double firstNr, double secondNr){
+        double result=firstNr+secondNr;
         return result;
 
     }
