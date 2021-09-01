@@ -22,6 +22,9 @@ public class Main {
                 case 1:
                     handleAddition();
                     break;
+                case 2:
+                        handleSubtraction();
+                        break;
                 case 3:
                     handleMultiplication();
                     break;
@@ -78,8 +81,18 @@ public class Main {
         int firstNr = scanner.nextInt();
         System.out.println("Write the number you like to add up.");
         int secondNr = scanner.nextInt();
-        int result = Operation.addition(firstNr, secondNr);
+        int result = Operations.addition(firstNr, secondNr);
         System.out.println("Result of "+ firstNr + " + " +secondNr+ " is: "+ result );
+    }
+
+    public static void handleSubtraction() {
+        System.out.println("You've opted for subtraction");
+        System.out.println("Enter your first term: ");
+        double term1 = scanner.nextInt();
+        System.out.println("Enter your second term: ");
+        double term2 = scanner.nextInt();
+        double difference = Operations.subtract(term1, term2);
+        System.out.println("The result of " + term1 + " subtracted by " + term2 + " is " + difference);
     }
     public static void handleDivision(){
         System.out.println("You've opted for division");
