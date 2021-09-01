@@ -4,7 +4,7 @@ package ec.utbildning;
 import java.util.List;
 import java.util.Scanner;
 
-// Här testar jag att skriva något
+
 
 public class Main {
 
