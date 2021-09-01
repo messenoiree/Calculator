@@ -37,7 +37,9 @@ public class Main {
                     isRunning = false;
                     System.out.println("You've selected to quit the calculator. Goodbye!");
                     break;
+
             }
+
         }
 
     }
@@ -53,7 +55,7 @@ public class Main {
         System.out.println("4. Division"); // Fatima tar denna!
         System.out.println("5. Square root"); // Marcus tar denna!
         System.out.println("6. Exit program");
-        System.out.println("Your choice: ");
+        System.out.print("Your choice: ");
         int choice = scanner.nextInt();
         if (!acceptableAnswers.contains(choice)) {
             // Och på grund av ovan fel blir detta också fel
