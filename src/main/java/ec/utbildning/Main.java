@@ -115,6 +115,11 @@ public class Main {
         double numerator = checkInput();
         System.out.print("Enter your denominator: ");
         double denominator = checkInput();
+        while (denominator == 0){
+            System.out.println("Denominator must be greater than 0!");
+            System.out.print("Enter your denominator: ");
+            denominator = checkInput();
+        }
         double quotient = Operations.divide(numerator, denominator);
         System.out.println("The result of " + numerator + " divided by " + denominator + " is " + quotient+"\n");
     }
