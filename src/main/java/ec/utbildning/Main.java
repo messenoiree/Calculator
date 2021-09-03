@@ -44,7 +44,7 @@ public class Main {
 
     }
 
-    // Här nere är ett fel, vet inte ännu hur vi ska lösa det
+
     public static int selectInput() {
         System.out.println("Type the corresponding number to select your desired operation: ");
         System.out.println("1. Addition");// Matilda tar denna
