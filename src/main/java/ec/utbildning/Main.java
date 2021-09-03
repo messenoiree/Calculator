@@ -74,9 +74,7 @@ public class Main {
                     isInvalidInput = false;
                 }
             }
-            catch (InvalidAnswerException e) {//Har löst den oändliga loopen vid fel input. scanner.nextLine() ska
-                //flyttas till catch blocket för att terminera den felaktiga inmatningen.
-
+            catch (InvalidAnswerException e) {
                 System.out.println("Invalid input, you must use a number between 1 and 6");
             }
         }
