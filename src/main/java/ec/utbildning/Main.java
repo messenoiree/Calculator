@@ -86,9 +86,9 @@ public class Main {
 
         System.out.println("You've opted for multiplication");
         System.out.println("Enter your first factor: ");
-        double factor1 = scanner.nextDouble();
+        double factor1 = checkInput();
         System.out.println("Enter your second factor: ");
-        double factor2 = scanner.nextDouble();
+        double factor2 = checkInput();
         double product = Operations.multiply(factor1, factor2);
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
@@ -108,9 +108,9 @@ public class Main {
     public static void handleSubtraction() {
         System.out.println("You've opted for subtraction");
         System.out.println("Enter your first term: ");
-        double term1 = scanner.nextInt();
+        double term1 = checkInput();
         System.out.println("Enter your second term: ");
-        double term2 = scanner.nextInt();
+        double term2 = checkInput();
         double difference = Operations.subtract(term1, term2);
         System.out.println("The result of " + term1 + " subtracted by " + term2 + " is " + difference);
     }
@@ -118,9 +118,9 @@ public class Main {
     public static void handleDivision() {
         System.out.println("You've opted for division");
         System.out.println("Enter your numerator: ");
-        double numerator = scanner.nextInt();
+        double numerator = checkInput();
         System.out.println("Enter your denominator: ");
-        double denominator = scanner.nextInt();
+        double denominator = checkInput();
         double quotient = Operations.divide(numerator, denominator);
         System.out.println("The result of " + numerator + " divided by " + denominator + " is " + quotient);
     }
@@ -128,7 +128,7 @@ public class Main {
     public static void handleSquareRoot() {
         System.out.println("You've opted in for square root");
         System.out.println("Enter your number: ");
-        double radicand = scanner.nextDouble();
+        double radicand = checkInput();
         double square = Operations.sqrt(radicand);
         System.out.println("The square root of " + radicand + " is " + square);
 
