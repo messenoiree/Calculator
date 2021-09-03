@@ -79,9 +79,9 @@ public class Main {
     public static void handleMultiplication() {
 
         System.out.println("You've opted for multiplication");
-        System.out.println("Enter your first factor: ");
+        System.out.print("Enter your first factor: ");
         double factor1 = checkInput();
-        System.out.println("Enter your second factor: ");
+        System.out.print("Enter your second factor: ");
         double factor2 = checkInput();
         double product = Operations.multiply(factor1, factor2);
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
@@ -91,9 +91,9 @@ public class Main {
     public static void handleAddition() {
 
         System.out.println("You opted for addition");
-        System.out.println("Write the first number: ");
+        System.out.print("Write the first number: ");
         double firstNr = checkInput();
-        System.out.println("Write the number you like to add up:");
+        System.out.print("Write the number you like to add up: ");
         double secondNr = checkInput();
         double result = Operations.add(firstNr, secondNr);
         System.out.println("Result of " + firstNr + " + " + secondNr + " is: " + result);
@@ -101,9 +101,9 @@ public class Main {
 
     public static void handleSubtraction() {
         System.out.println("You've opted for subtraction");
-        System.out.println("Enter your first term: ");
+        System.out.print("Enter your first term: ");
         double term1 = checkInput();
-        System.out.println("Enter your second term: ");
+        System.out.print("Enter your second term: ");
         double term2 = checkInput();
         double difference = Operations.subtract(term1, term2);
         System.out.println("The result of " + term1 + " subtracted by " + term2 + " is " + difference);
@@ -111,9 +111,9 @@ public class Main {
 
     public static void handleDivision() {
         System.out.println("You've opted for division");
-        System.out.println("Enter your numerator: ");
+        System.out.print("Enter your numerator: ");
         double numerator = checkInput();
-        System.out.println("Enter your denominator: ");
+        System.out.print("Enter your denominator: ");
         double denominator = checkInput();
         double quotient = Operations.divide(numerator, denominator);
         System.out.println("The result of " + numerator + " divided by " + denominator + " is " + quotient);
@@ -121,7 +121,7 @@ public class Main {
 
     public static void handleSquareRoot() {
         System.out.println("You've opted in for square root");
-        System.out.println("Enter your number: ");
+        System.out.print("Enter your number: ");
         double radicand = checkInput();
         double square = Operations.sqrt(radicand);
         System.out.println("The square root of " + radicand + " is " + square);
