@@ -1,6 +1,7 @@
 package ec.utbildning;
 
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,42 +46,34 @@ public class Main {
     }
 
     // Här nere är ett fel, vet inte ännu hur vi ska lösa det
-    public static int selectInput() throws InvalidAnswerException {
-        int result = 0;
-        List<Integer> acceptableAnswers = List.of(1, 2, 3, 4, 5, 6); //nr 3 saknades, tillagd.
-        boolean isInvalidInput = true;
-        while (isInvalidInput) {
-            System.out.println("Type the corresponding number to select your desired operation: ");
-            System.out.println("1. Addition");// Matilda tar denna
-            System.out.println("2. Subtraction");//Konstantin tar denna!
-            System.out.println("3. Multiplication"); // Robin tar denna!
-            System.out.println("4. Division"); // Fatima tar denna!
-            System.out.println("5. Square root"); // Marcus tar denna!
-            System.out.println("6. Exit program");
-            System.out.print("Your choice: ");
+    public static int selectInput() {
+        System.out.println("Type the corresponding number to select your desired operation: ");
+        System.out.println("1. Addition");// Matilda tar denna
+        System.out.println("2. Subtraction");//Konstantin tar denna!
+        System.out.println("3. Multiplication"); // Robin tar denna!
+        System.out.println("4. Division"); // Fatima tar denna!
+        System.out.println("5. Square root"); // Marcus tar denna!
+        System.out.println("6. Exit program");
+        System.out.print("Your choice: ");
 
-            int choice = 0;
+        int choice = 0;
 
-            // Här är vi och fäktas med problemen
-            try {
-                choice = scanner.nextInt();
-                scanner.nextLine();
-                if (!acceptableAnswers.contains(choice)) {
-                    // Och på grund av ovan fel blir detta också fel
+        // Här är vi och fäktas med problemen
+        try {
+            choice = scanner.nextInt();
+            scanner.nextLine();
 
-                    throw new InvalidAnswerException("Not a valid answer");
-                } else {
-                    result = choice;
-                    isInvalidInput = false;
-                }
+            if (choice > 6) {
+                System.out.println("Please choose an option from the menu!");
             }
-            catch (InvalidAnswerException e) {//Har löst den oändliga loopen vid fel input. scanner.nextLine() ska
-                //flyttas till catch blocket för att terminera den felaktiga inmatningen.
 
-                System.out.println("Invalid input, you must use a number between 1 and 6");
-            }
+        } catch (InputMismatchException e) {
+
+            System.out.println("Error, only use numbers!");
+            scanner.nextLine();
         }
-        return result;
+
+        return choice;
     }
 
 
