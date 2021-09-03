@@ -9,7 +9,7 @@ public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws InvalidAnswerException {
+    public static void main(String[] args) {
 
         System.out.println("Booting up Calculator 3000 ...");
         System.out.println("Finished booting up Calculator 3000");
