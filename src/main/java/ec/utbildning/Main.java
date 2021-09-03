@@ -1,7 +1,6 @@
 package ec.utbildning;
 
 
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -46,34 +45,42 @@ public class Main {
     }
 
     // Här nere är ett fel, vet inte ännu hur vi ska lösa det
-    public static int selectInput() {
-        System.out.println("Type the corresponding number to select your desired operation: ");
-        System.out.println("1. Addition");// Matilda tar denna
-        System.out.println("2. Subtraction");//Konstantin tar denna!
-        System.out.println("3. Multiplication"); // Robin tar denna!
-        System.out.println("4. Division"); // Fatima tar denna!
-        System.out.println("5. Square root"); // Marcus tar denna!
-        System.out.println("6. Exit program");
-        System.out.print("Your choice: ");
+    public static int selectInput() throws InvalidAnswerException {
+        int result = 0;
+        List<Integer> acceptableAnswers = List.of(1, 2, 3, 4, 5, 6); //nr 3 saknades, tillagd.
+        boolean isInvalidInput = true;
+        while (isInvalidInput) {
+            System.out.println("Type the corresponding number to select your desired operation: ");
+            System.out.println("1. Addition");// Matilda tar denna
+            System.out.println("2. Subtraction");//Konstantin tar denna!
+            System.out.println("3. Multiplication"); // Robin tar denna!
+            System.out.println("4. Division"); // Fatima tar denna!
+            System.out.println("5. Square root"); // Marcus tar denna!
+            System.out.println("6. Exit program");
+            System.out.print("Your choice: ");
 
-        int choice = 0;
+            int choice = 0;
 
-        // Här är vi och fäktas med problemen
-        try {
-            choice = scanner.nextInt();
-            scanner.nextLine();
+            // Här är vi och fäktas med problemen
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine();
+                if (!acceptableAnswers.contains(choice)) {
+                    // Och på grund av ovan fel blir detta också fel
 
-            if (choice > 6) {
-                System.out.println("Please choose an option from the menu!");
+                    throw new InvalidAnswerException("Not a valid answer");
+                } else {
+                    result = choice;
+                    isInvalidInput = false;
+                }
             }
+            catch (InvalidAnswerException e) {//Har löst den oändliga loopen vid fel input. scanner.nextLine() ska
+                //flyttas till catch blocket för att terminera den felaktiga inmatningen.
 
-        } catch (InputMismatchException e) {
-
-            System.out.println("Error, only use numbers!");
-            scanner.nextLine();
+                System.out.println("Invalid input, you must use a number between 1 and 6");
+            }
         }
-
-        return choice;
+        return result;
     }
 
 
@@ -81,9 +88,9 @@ public class Main {
 
         System.out.println("You've opted for multiplication");
         System.out.println("Enter your first factor: ");
-        double factor1 = scanner.nextDouble();
+        double factor1 = checkInput();
         System.out.println("Enter your second factor: ");
-        double factor2 = scanner.nextDouble();
+        double factor2 = checkInput();
         double product = Operations.multiply(factor1, factor2);
         System.out.println("The result of " + factor1 + " multiplied by " + factor2 + " is " + product);
 
@@ -103,9 +110,9 @@ public class Main {
     public static void handleSubtraction() {
         System.out.println("You've opted for subtraction");
         System.out.println("Enter your first term: ");
-        double term1 = scanner.nextInt();
+        double term1 = checkInput();
         System.out.println("Enter your second term: ");
-        double term2 = scanner.nextInt();
+        double term2 = checkInput();
         double difference = Operations.subtract(term1, term2);
         System.out.println("The result of " + term1 + " subtracted by " + term2 + " is " + difference);
     }
@@ -113,9 +120,9 @@ public class Main {
     public static void handleDivision() {
         System.out.println("You've opted for division");
         System.out.println("Enter your numerator: ");
-        double numerator = scanner.nextInt();
+        double numerator = checkInput();
         System.out.println("Enter your denominator: ");
-        double denominator = scanner.nextInt();
+        double denominator = checkInput();
         double quotient = Operations.divide(numerator, denominator);
         System.out.println("The result of " + numerator + " divided by " + denominator + " is " + quotient);
     }
@@ -123,7 +130,7 @@ public class Main {
     public static void handleSquareRoot() {
         System.out.println("You've opted in for square root");
         System.out.println("Enter your number: ");
-        double radicand = scanner.nextDouble();
+        double radicand = checkInput();
         double square = Operations.sqrt(radicand);
         System.out.println("The square root of " + radicand + " is " + square);
 
