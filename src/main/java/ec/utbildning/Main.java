@@ -136,7 +136,7 @@ public class Main {
     public static double checkInput() {
         boolean isInvalid = true;
         double convertedToDouble = 0;
-        String userInput = "";
+        String userInput;
         while (isInvalid) {
             try {
                 userInput = scanner.nextLine();
